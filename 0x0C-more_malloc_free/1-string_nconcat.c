@@ -1,15 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-
-/**
- * string_nconcat - concatenates two strings with a given number of bytes
- * @s1: first string
- * @s2: second string
- * @n: number of bytes of s2 to copy into s1
- *
- * Return: Null if error or char pointer to the new joined place in memory
- */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int a;
