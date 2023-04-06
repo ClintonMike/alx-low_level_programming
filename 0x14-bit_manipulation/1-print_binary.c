@@ -8,15 +8,14 @@
 void print_binary(unsigned long int n)
 {
 	int i;
-	unsigned long int mask = 0;
+	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
 
-	/* Calculate the number of bits in unsigned long int */
-	for (i = sizeof(unsigned long int) * 8 - 1; i >= 0; i--)
-	{
-		mask = 1UL << i; /* Shift the 1 to the i-th position */
-		if (n & mask) /* Check if the i-th bit is set */
+	for (i = 0; i < sizeof(unsigned long int) * 8; i++) {
+		if (n & mask)
 			_putchar('1');
 		else
 			_putchar('0');
+
+		mask >>= 1;
 	}
 }
